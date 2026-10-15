@@ -1,0 +1,175 @@
+  1  SIGMAIN<À>  ?  A  VH   Intake performance map turning in "Pressure recovery" - "Corrected air flow rate" plane
+  2  SIGMAIN<Â>  ?  B  VH   Intake performance map turning in "Pressure recovery" - "Mach number" plane
+  3  SIGMAIN<Ñ>  ?  C  VH   Intake performance map shift along "Pressure recovery" axis
+  4  PiP<À>      ?  A  KND  LPC performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+  5  PiP<Â>      ?  B  KND  LPC performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+  6  PiP<Ñ>      ?  C  KND  Supercharger performance map shift along "Total pressure ratio" axis
+  7  GACOR<Ñ>    1  C  KND  Supercharger performance map shift along "Corrected air flow rate" axis
+  8  EFFP<À>     ?  A  KND  LPC efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+  9  EFFP<Â>     ?  B  KND  LPC efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 10  EFFP<Ñ>     1  C  KND  Supercharger efficiency performance map shift along "Efficiency" axis
+ 11  PiF2<À>     ?  A  KN2  LPC2 performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+ 12  PiF2<Â>     ?  B  KN2  LPC2 performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+ 13  PiF2<Ñ>     ?  C  KN2  LPC2 performance map shift along "Total pressure ratio" axis
+ 14  GA2COR<Ñ>   ?  C  KN2  LPC2 performance map shift along "Corrected air flow rate" axis
+ 15  EFFF2<À>    ?  A  KN2  LPC2 efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 16  EFFF2<Â>    ?  B  KN2  LPC2 efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 17  EffÂ2<Ñ>    ?  C  KN2  LPC2 efficiency performance map shift along "Efficiency" axis
+ 18  PiF1<À>     ?  A  KN1  LPC1 performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+ 19  PiF1<Â>     ?  B  KN1  LPC1 performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+ 20  PiF1<Ñ>     ?  C  KN1  LPC1 performance map shift along "Total pressure ratio" axis
+ 21  GF1COR<Ñ>   ?  C  KN1  LPC1 performance map shift along "Corrected air flow" axis
+ 22  EFFF1<À>    ?  A  KN1  LPC1 efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 23  EFFF1<Â>    ?  B  KN1  LPC1 efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 24  EFFF1<Ñ>    ?  C  KN1  LPC2 efficiency performance map shift along "Efficiency" axis
+ 25  ADDST<À>    ?  A  PS   Add stage performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+ 26  ADDST<Â>    ?  B  PS   Add stage performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+ 27  ADDST<Ñ>    ?  C  PS   Add stage performance map shift along "Total pressure ratio" axis
+ 28  GADDCOR<Ñ>  1  C  PS   Add stage performance map shift along "Corrected air flow rate" axis
+ 29  EFFADDST<À> ?  A  PS   Add stage efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 30  EFFADDST<Â> ?  B  PS   Add stage efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 31  EFFADDST<Ñ> 1  C  PS   Add stage efficiency performance map shift along "Efficiency" axis
+ 32  PiPC<À>     ?  A  KSD  IPC performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+ 33  PiPCÏIPC<Â> ?  B  KSD  IPC performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+ 34  PiPC<Ñ>     ?  C  KSD  IPC performance map shift along "Total pressure ratio" axis
+ 35  GAIPCCOR<Ñ> 1  C  KSD  IPC performance map shift along "Corrected air flow rate" axis
+ 36  EFFIPC<À>   ?  A  KSD  IPC efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 37  EFFIPC<Â>   ?  B  KSD  IPC efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 38  EFFIPC<Ñ>   1  C  KSD  IPC efficiency performance map shift along "Efficiency" axis
+ 39  PiHPC<À>    ?  A  KVD  HPC performance map turning in "Total pressure ratio" - "Corrected rotational speed" plane
+ 40  PiHPC<Â>    ?  B  KVD  HPC performance map turning in "Total pressure ratio" - "Operating point position coefficient" plane
+ 41  PiHPC<Ñ>    ?  C  KVD  HPC performance map shift along "Total pressure ratio" axis
+ 42  GAHPCCOR<Ñ> ?  C  KVD  HPC performance map shift along "Corrected air flow rate" axis
+ 43  EFFHPC<À>   ?  A  KVD  HPC efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 44  EFFHPC<Â>   ?  B  KVD  HPC efficiency performance map turning in "Efficiency" - "Operating point position coefficient" plane
+ 45  EFFHPC<Ñ>   ?  C  KVD  HPC efficiency performance map shift along "Efficiency" axis
+ 46  AHPT<À>     ?  A  TVD  HPT performance map turning in "Corrected gas flow rate" - "Total pressure ratio" plane
+ 47  AHPT<Â>     ?  B  TVD  HPT performance map turning in "Corrected gas flow rate" - "Corrected rotational speed" plane
+ 48  AÒÂÄ<Ñ>     1  C  TVD  HPT performance map shift along "Corrected gas flow rate" axis
+ 49  EFFHPT<À>   ?  A  TVD  HPT efficiency performance map turning in "Efficiency" - "Total pressure ratio" plane
+ 50  EFFHPT<Â>   ?  B  TVD  HPT efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 51  EFFHPT<Ñ>   1  C  TVD  HPT efficiency performance map shift along "Efficiency" axis
+ 52  AIPT<À>     ?  A  TSD  IPT performance map turning in "Corrected gas flow rate" - "Total pressure ratio" plane
+ 53  AIPT<Â>     ?  B  TSD  IPT performance map turning in "Corrected gas flow rate" - "Corrected rotational speed" plane
+ 54  AIPT<Ñ>     1  C  TSD  IPT performance map shift along "Corrected gas flow rate" axis
+ 55  EFFIPT<À>   ?  A  TSD  IPT efficiency performance map turning in "Efficiency" - "Total pressure ratio" plane
+ 56  EFFIPT<Â>   ?  B  TSD  IPT efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 57  EFFIPT<Ñ>   1  C  TSD  IPT efficiency performance map shift along "Efficiency" axis
+ 58  ALPT<À>     ?  A  TND  LPT performance map turning in "Corrected gas flow rate" - "Total pressure ratio" plane
+ 59  ALPT<Â>     ?  B  TND  LPT performance map turning in "Corrected gas flow rate" - "Corrected rotational speed" plane
+ 60  ALPT<Ñ>     1  C  TND  LPT performance map shift along "Corrected gas flow rate" axis
+ 61  EFFLPT<À>   ?  A  TND  LPT efficiency performance map turning in "Efficiency" - "Total pressure ratio" plane
+ 62  EFFLPT<Â>   ?  B  TND  LPT efficiency performance map turning in "Efficiency" - "Corrected rotational speed" plane
+ 63  EFFLPT<Ñ>   1  C  TND  LPT efficiency performance map shift along "Efficiency" axis
+ 64  PiÑC<À>     ?  A  KS   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Temperature" plane (combustion chamber)
+ 65  PiCC<Â>     ?  B  KS   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Pressure" plane (combustion chamber)
+ 66  PiCC<Ñ>     1  C  KS   Total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis (combustion chamber)
+ 67  EFFCC<À>    ?  A  KS   Combustion efficiency performance map turning in "Combustion efficiency" - "Temperature" plane (combustion chamber)
+ 68  EFFCC<Â>    ?  B  KS   Combustion efficiency performance map turning in "Combustion efficiency" - "Pressure" plane (combustion chamber)
+ 69  EFFCC<Ñ>    1  C  KS   Combustion efficiency performance map shift along "Combustion efficiency" axis (combustion chamber)
+ 70  PiAFT2<À>   ?  A  FK   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Temperature" plane (afterburning 2)
+ 71  PiAFT2<Â>   ?  B  FK   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Pressure" plane (afterburning 2)
+ 72  PiAFT2<Ñ>   ?  C  FK   Total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis  (afterburning 2)
+ 73  EFFAFT2<À>  ?  A  FK   Combustion efficiency performance map turning in "Combustion efficiency" - "Temperature" plane (afterburning 2)
+ 74  EFFAFT2<Â>  ?  B  FK   Combustion efficiency performance map turning in "Combustion efficiency" - "Pressure" plane (afterburning 2)
+ 75  EFFAFT2<Ñ>  ?  C  FK   Combustion efficiency performance map shift along "Combustion efficiency" axis (afterburning 2)
+ 76  PiAFT<À>    ?  A  FK   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Temperature" plane (afterburning)
+ 77  PiAFT<Â>    ?  B  FK   Total pressure loss coefficient performance map turning in "Total pressure loss coefficient"-"Pressure" plane (afterburning)
+ 78  PiAFT<Ñ>    ?  C  FK   Total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis  (afterburning)
+ 79  EFFAFT<À>   ?  A  FK   Combustion efficiency performance map turning in "Combustion efficiency" - "Temperature" plane (afterburning)
+ 80  EFFAFT<Â>   ?  B  FK   Combustion efficiency performance map turning in "Combustion efficiency" - "Pressure" plane (afterburning)
+ 81  EFFAFT<Ñ>   ?  C  FK   Combustion efficiency performance map shift along "Combustion efficiency" axis (afterburning)
+ 82  PiTRANS1<À> ?  A  P    Transition duct between LPC and IPC performance map turning in "Total pressure loss coefficient" - "Corrected air flow rate" plane
+ 83  PiTRANS1<Ñ> ?  C  P    Transition duct between LPC and IPC performance map shift along "Total pressure loss coefficient" axis
+ 84  PiTRANS2<À> ?  A  P    Transition duct between IPC and HPC performance map turning in "Total pressure loss coefficient" - "Corrected air flow rate" plane
+ 85  PiTRANS2<Ñ> ?  C  P    Transition duct between IPC and HPC performance map shift along "Total pressure loss coefficient" axis
+ 86  PiTRANS3<À> ?  A  P    Transition duct between HPT and IPT performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane
+ 87  PiTRANS3<Ñ> ?  C  P    Transition duct between HPT and IPT performance map shift along "Total pressure loss coefficient" axis
+ 88  PiTRANS4<À> ?  A  P    Transition duct between IPT and LPT performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane
+ 89  PiTRANS4<Ñ> ?  C  P    Transition duct between IPT and LPT performance map shift along "Total pressure loss coefficient" axis
+ 90  PiTRANS5<À> ?  A  P    Bypass duct performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane
+ 91  PiTRANS5<Ñ> ?  C  P    Bypass duct performance map shift along "Total pressure loss coefficient" axis
+ 92  PiNOZ1<À>   ?  A  S1   Nozzle total pressure loss coefficient performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane (primary duct)
+ 93  PiNOZ1<Ñ>   ?  C  S1   Nozzle total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis (primary duct)
+ 94  FINOZ1<À>   ?  A  S1   Nozzle efficiency performance map turning in "Nozzle efficiency" - "Corrected gas flow rate" plane (primary duct)
+ 95  FINOZ1<Ñ>   ?  C  S1   Nozzle efficiency performance map shift along "Nozzle efficiency" axis (primary duct)
+ 96  NFC1<À>     ?  A  S1   Nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Corrected gas flow rate" plane (primary duct)
+ 97  NFC1<Â>     ?  B  S1   Nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Mach number" plane (primary duct)
+ 98  NFC1<Ñ>     ?  C  S1   Nozzle discharge coefficient performance map shift along "Nozzle discharge coefficient" axis (primary duct)
+ 99  PiNOZ2<À>   ?  A  S2   Nozzle total pressure loss coefficient performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane (bypass)
+100  PiNOZ2<Ñ>   ?  C  S2   Nozzle total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis (bypass)
+101  FINOZ2<À>   ?  A  S2   Nozzle efficiency performance map turning in "Nozzle efficiency" - "Corrected gas flow rate" plane (bypass)
+102  FINOZ2<Ñ>   ?  C  S2   Nozzle efficiency performance map shift along "Nozzle efficiency" axis (bypass)
+103  NFC2<À>     ?  A  S2   Nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Corrected gas flow rate" plane (bypass)
+104  NFC2<Â>     ?  B  S2   Nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Mach number" plane (bypass)
+105  NFC2<Ñ>     ?  C  S2   Nozzle discharge coefficient performance map shift along "Nozzle flow coefficient" axis (bypass)
+106  PiCOMNOZ<À> ?  A  S    Common nozzle total pressure loss coefficient performance map turning in "Total pressure loss coefficient" - "Corrected gas flow rate" plane
+107  PiCOMNOZ<Ñ> ?  C  S    Common nozzle total pressure loss coefficient performance map shift along "Total pressure loss coefficient" axis
+108  FICOMMOZ<À> ?  A  S    Common nozzle efficiency performance map turning in "Nozzle efficiency" - "Corrected gas flow rate" plane
+109  FICOMMOZ<Ñ> ?  C  S    Common nozzle efficiency performance map shift along "Nozzle efficiency" axis
+110  COMNFC<À>   ?  A  S    Common nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Corrected gas flow rate" plane
+111  COMNFC<Â>   ?  B  S    Common nozzle discharge coefficient performance map turning in "Nozzle discharge coefficient" - "Mach number" plane
+112  COMNFC<Ñ>   ?  C  S    Common nozzle discharge coefficient performance map shift along "Nozzle discharge coefficient" axis
+113  PiMIX<À>    ?  A  KSM  Mixer performance map turning in "Total pressure loss coefficient" - "Bypass corrected gas flow rate" plane
+114  PiMIX<Â>    ?  B  KSM  Mixer performance map turning in "Total pressure loss coefficient" - "Primary duct corrected gas flow rate" plane
+115  PiMIX<Ñ>    ?  C  KSM  Mixer performance map shift along "Total pressure loss coefficient" axis
+116  TAUP<À>     ?  A  KND  LPC air bleed  rate performance map turning in "Heating degree" - "Total pressure ratio" plane
+117  TAUP<Â>     ?  B  KND  Turning   ( reserve )
+118  TAUÂ<Ñ>     ?  C  KND  LPC air bleed rate performance map shift along "Heating degree" axis
+119  TAUIPC<À>   ?  A  KSD  IPC air bleed rate performance map turning in "Heating degree" - "Total pressure ratio" plane
+120  TAUIPC<Â>   ?  B  KSD  Turning   ( reserve )
+121  TAUIPC<Ñ>   ?  C  KSD  IPC air bleed rate performance map shift along "Heating degree" axis
+122  TAUHPC<À>   ?  A  KVD  HPC air bleed rate performance map turning in "Heating degree" - "Total pressure ratio" plane
+123  TAUHPC<Â>   ?  B  KVD  Turning   ( reserve )
+124  TAU7<Ñ>     ?  C  KVD  Air bleed rate from behind 7th stage performance map shift along "Heating degree" axis
+125  TAUCC<À>    ?  A  KS   CC air bleed rate performance map turning in "Heating degree" - "Temperature" plane
+126  TAUCC<Ñ>    ?  C  KS   CC air bleed rate performance map shift along "Heating degree" axis
+127  DG1<C>      ?  C  KND  Fan air bleed rate performance map shift along "Airflow rate" axis
+128  DG2<C>      ?  C  KND  Fan (bypass part) air bleed rate performance map shift along "Airflow rate" axis
+129  DG3<C>      ?  C  PS   Air bleed rate from behind booster performance map shift along "Airflow rate" axis
+130  DG4<C>      ?  C  KSD  IPC air bleed rate performance map shift along "Airflow rate" axis
+131  DG5<C>      ?  C  KVD  Air bleed rate from behind HPC 4th stage performance map shift along "Airflow rate" axis
+132  DG6<C>      ?  C  KVD  Air bleed rate from behind 7th stage performance map shift along "Airflow rate" axis
+133  DG7<C>      1  C  KVD  Air bleed rate from behind compressor performance map shift along "Airflow rate" axis
+134  DG8<C>      ?  C  KS   CC air bleed rate performance map shift along "Airflow rate" axis
+135  TAUHPC<Ñ>   ?  C  KVD  Air bleed rate from behind HPC 4th stage performance map shift along "Heating degree" axis
+-1
+....................................................................
+Key Designation
+                 Type
+                    Coefficient kind
+                       Unit
+                            Designation
+     
+              Type (according to frequency of application):
+                                                       Filter
+1   - top-prior                                        *
+?   - still undefined
+     
+              Coefficient kind:
+                                                       Filter
+A   - first kind turning
+B   - second kind turning
+C   - shift along performance                          *
+     
+              Unit:
+                                                       Filter
+FK  - afterburing
+KND - low pressure compressor                          *
+KN1 - low pressure compressor (primary duct)
+KN2 - low pressure compressor (bypass)
+KS  - combustion chamber                               *
+KSD - intermediate pressure compressor                 *
+KSM - mixer
+KVD - high pressure compressor                         *
+P   - transition duct (P1,P2,P3,P4,P5)
+PS  - booster
+S   - nozzle
+S1  - prior duct nozzle
+S2  - bypass nozzle
+TND - low pressure turbine                             *
+TSD - intermediate pressure turbine                    *
+TVD - high pressure turbine                            *
+VH  - intake
+-   - others
+?   - specification needed

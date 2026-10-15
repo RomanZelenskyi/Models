@@ -1,0 +1,59 @@
+Файл сгенерирован при расчете дроссельной х-ки                                 
+594232224 1669861842 2636906592 1376014421                                     
+   3
+  38
+..\data\XVHOD.dat
+..\data\Xknd2.dat
+..\data\Xknd1.dat
+..\data\XPER1.dat
+..\data\XPER2.dat
+..\data\XPER4.dat
+..\data\XPER5.dat
+..\data\XKVDC-3.dat
+..\data\XKVDC-0n.dat
+..\data\XKVDC+3.dat
+..\data\XKS.dat
+..\data\Xtvd.dat
+..\data\XPER3.dat
+..\data\Xtnd1.dat
+..\data\Xtnd.dat
+..\data\XSOPL1.dat
+..\data\XSOPL2.dat
+..\data\XKSM.dat
+..\data\Xotbor1.dat
+..\data\Xotbor2.dat
+..\data\Xotbor3.dat
+..\data\MEH.dat
+..\data\Prednp.dat
+..\data\nezper0.DAT
+..\data\TEPL.DAT
+..\data\ResultSTV.DAT
+..\data\ResultTVDBL.dat
+..\data\ResultTVD.DAT
+..\data\ResultSTN.DAT
+..\data\ResultTNDBL.dat
+..\data\ResultTND.DAT
+..\data\volume.dat
+..\data\VBV.DAT
+..\data\Controllers.DAT
+..\data\otbor_dop.dat
+..\data\ParTP.dat
+..\data\clearance.dat
+..\data\ReLPT.dat
+   4   6   2   1   1   0   0   0   0   0   0   0   0
+   3   3   2   2   0   0
+  12
+            421            160            161            159            186             -1             -1             -1             -1             -1             -1             -1
+       1.000000   87650.000000     279.980000       0.000000    1780.972800      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000
+       2.000000   78840.000000     272.740000       0.000000    1814.672400      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000
+       3.000000   62840.000000     263.160000       0.000000    1769.229000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000      -1.000000
+  1.00000E-005  1.00000E-006
+   3  13  63
+             20             24
+       0.000000       0.000000
+             20             24
+       0.000000       0.000000
+  1.0000  1.0000  1.0000
+   91300.000000   94210.000000     285.240000       1.000000
+   81950.000000   85820.000000     277.960000       1.000000
+   65640.000000   66960.000000     267.840000       1.000000

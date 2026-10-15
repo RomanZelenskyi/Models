@@ -1,0 +1,29 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+ <PropertyGroup>
+  <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  <ProjectGuid>{A79C34AA-81DE-4F22-9774-1050D9566381}</ProjectGuid><OutputType>Library</OutputType>
+  <RootNamespace>Mdiapp.Core</RootNamespace><AssemblyName>Mdiapp.Core</AssemblyName>
+  <TargetFrameworkVersion>v4.8</TargetFrameworkVersion><LangVersion>8.0</LangVersion>
+  <BaseIntermediateOutputPath>obj\vs2019\</BaseIntermediateOutputPath><AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects><Deterministic>true</Deterministic>
+ </PropertyGroup>
+ <PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>bin\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants></PropertyGroup>
+ <PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugType>pdbonly</DebugType><Optimize>true</Optimize><OutputPath>bin\Release\</OutputPath><DefineConstants>TRACE</DefineConstants></PropertyGroup>
+ <ItemGroup><Reference Include="System" /><Reference Include="System.Core" /></ItemGroup><ItemGroup><Compile Include="IniFile.cs" />
+<Compile Include="LegacyCodec.cs" />
+<Compile Include="LegacyProject.cs" />
+<Compile Include="ParameterSeries.cs" /></ItemGroup><ItemGroup></ItemGroup>
+ <ItemGroup><Compile Include="ApplicationSettings.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="InputFile51.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="Unit3Model.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="CatalogWorkspace.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="EngineCreation.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="EngineImport.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="ResultExportSettings.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="ResultFileSelection.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="InputFiles3132.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="InputFile30.cs" /></ItemGroup>
+ <ItemGroup><Compile Include="InputFile28.cs" /><Compile Include="InputExtendedFile28.cs" /><Compile Include="InputFile24.cs" /><Compile Include="InputFile41.cs" /><Compile Include="CharacteristicFile.cs" /><Compile Include="InputCurveFile.cs" /><Compile Include="InputDoubleCurveFile.cs" /><Compile Include="InputTripleCurveFile.cs" /><Compile Include="InputQuadCurveFile.cs" /><Compile Include="ControllersFile.cs" /><Compile Include="MultiCharacteristicFile.cs" /><Compile Include="CorrectedCurveFile.cs" /><Compile Include="CorrectedDoubleCurveFile.cs" /><Compile Include="CorrectedTripleCurveFile.cs" /><Compile Include="CorrectedCharacteristicFile.cs" /><Compile Include="InputThreeColumnFile.cs" /></ItemGroup>
+ <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<ItemGroup><Compile Include="InputFile300.cs" /></ItemGroup><ItemGroup><Compile Include="InputSurfaceFile.cs" /></ItemGroup><ItemGroup><Compile Include="InputTransitionFile.cs" /></ItemGroup><ItemGroup><Compile Include="InputFile55.cs" /></ItemGroup><ItemGroup><Compile Include="InputFile56.cs" /></ItemGroup><ItemGroup><Compile Include="InputFile57.cs" /></ItemGroup><ItemGroup><Compile Include="ProjectDocument.cs" /></ItemGroup><ItemGroup><Compile Include="CalculationResults.cs" /></ItemGroup><ItemGroup><Compile Include="CalculationRunner.cs" /></ItemGroup></Project>

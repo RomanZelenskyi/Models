@@ -1,0 +1,692 @@
+    1   P*_1       ?     P  KND   Fan inlet pressure 
+    2   P*_2       ?     P  KND   Pressure at fan air bleed station
+    3   P*_3       ?     P  KND   Fan discharge pressure in bypass duct
+    4   P*_4       ?     P  KND   Pressure in bypass duct after air bleed from LPC
+    5   P*_5       ?     P  FK    Pressure in bypass duct at afterburner inlet
+    6   P*_6       ?     P  KSM   Pressure in bypass duct at mixer inlet 
+    7   P*_7       ?     P  KND   Fan discharge pressure in primary duct
+    8   P*_8       ?     P  PS    Booster discharge pressure 
+    9   P*_9       ?     P  PS    Pressure after booster air bleed 
+   10   P*10       ?     P  KSD   IPC inlet pressure
+   11   P*11       ?     P  KSD   Pressure at air bleed from IPC
+   12   P*12       ?     P  KSD   IPC discharge pressure
+   13   P*13       ?     P  KSD   Pressure at  air bleed from IPC
+   14   P*14       ?     P  KVD   HPC inlet pressure
+   15   P*15       ?     P  KVD   Pressure at 2nd air bleed from HPC
+   16   P*16       OSN   P  KVD   HPC discharge pressure
+   17   P*17       ?     P  KS    Combustion chamber inlet pressure
+   18   P*18       ?     P  KS    Pressure at gas bleed from combustion chamber
+   19   P*19       ?     P  KS    Combustion chamber discharge pressure
+   20   P*20       ?     P  TVD   HPT nozzle vanes  inlet pressure
+   21   P*21       ?     P  TVD   HPT nozzle vanes  discharge pressure   
+   22   P*22       ?     P  TVD   HPT impeller inlet pressure
+   23   P*23       ?     P  TVD   HPT impeller discharge pressure
+   24   P*24       ?     P  TVD   HPT discharge pressure after air input  
+   25   P*25       ?     P  P     Pressure at transition duct between HPT and IPT discharge 
+   26   P*26       ?     P  TSD   IPT nozzle vanes inlet pressure
+   27   P*27       ?     P  TSD   IPT nozzle vanes discharge pressure
+   28   P*28       ?     P  TSD   IPT impeller inlet pressure
+   29   P*29       ?     P  TSD   IPT impeller discharge pressure
+   30   P*30       ?     P  TSD   IPT discharge pressure after air input 
+   31   P*31       ?     P  P     Pressure at transition duct between IPT and LPT discharge 
+   32   P*32       ?     P  TND   LPT nozzle vanes inlet pressure
+   33   P*33       ?     P  TND   Pressure at  first stage of LPT discharge
+   34   P*34       ?     P  TND   LPT impeller inlet pressure
+   35   P*35       ?     P  TND   LPT impeller discharge pressure
+   36   P*36       ?     P  TND   LPT discharge pressure after air input
+   37   P*37       ?     P  S     Nozzle discharge pressure
+   38   P*38       ?     P  KSM   Mixer discharge pressure
+   39   P*39       ?     P  FK    Common afterburner inlet pressure
+   40   P*40       ?     P  FK    Pressure before gas bleed from common afterburner
+   41   P*41       ?     P  S     Common nozzle inlet pressure
+   42   P*42       ?     P  S     Common nozzle discharge pressure
+   43   P*43       ?     P  KVD   Pressure at 1st air bleed from HPC 
+   44   P*44       ?     P  KVD   Pressure before HPC ABV 
+   45   P*45       ?     P  PS    Pressure before booster ABV 
+   46   P*46       ?     P  -     Pressure ( reserve )
+   47   P*47       ?     P  -     Pressure ( reserve )
+   48   P*48       ?     P  -     Pressure ( reserve )
+   49   P*49       ?     P  -     Pressure ( reserve )
+   50   P*50       ?     P  -     Pressure ( reserve )
+   51   T*_1       ?     T  KND   Fan inlet temperature 
+   52   T*_2       ?     T  KND   Temperature at air bleed from fan station
+   53   T*_3       ?     T  KND   Fan discharge temperature in bypass duct
+   54   T*_4       ?     T  KND   Temperature in bypass duct after air bleed from LPC
+   55   T*_5       ?     T  FK    Temperature in bypass duct at afterburner inlet
+   56   T*_6       ?     T  KSM   Temperature in bypass duct at mixer inlet
+   57   T*_7       ?     T  KND   Fan discharge pressure in primary duct
+   58   T*_8       ?     T  PS    Booster discharge temperature
+   59   T*_9       ?     T  PS    Temperature after booster air bleed
+   60   T*10       ?     T  KSD   IPC inlet temperature
+   61   T*11       ?     T  KSD   Temperature at air bleed from IPC
+   62   T*12       ?     T  KSD   IPC inlet discharge temperature
+   63   T*13       ?     T  KSD   Temperature at  air bleed from IPC
+   64   T*14       OSN   T  KVD   HPC inlet temperature
+   65   T*15       ?     T  KVD   Temperature at 2nd air bleed from HPC
+   66   T*16       ?     T  KVD   HPC discharge temperature
+   67   T*17       ?     T  KS    Combustion chamber inlet temperature
+   68   T*18       ?     T  KS    Temperature at gas bleed from combustion chamber 
+   69   T*19       OSN   T  KS    Combustion chamber discharge temperature
+   70   T*20       ?     T  TVD   HPT nozzle vanes inlet temperature
+   71   T*21       ?     T  TVD   HPT nozzle vanes discharge temperature
+   72   T*22       ?     T  TVD   HPT impeller inlet temperature
+   73   T*23       ?     T  TVD   HPT impeller discharge temperature
+   74   T*24       ?     T  TVD   HPT discharge temperature after air input
+   75   T*25       ?     T  P     Temperature at transition duct between HPT and IPT discharge 
+   76   T*26       ?     T  TSD   IPT nozzle vanes inlet temperature
+   77   T*27       ?     T  TSD   IPT nozzle vanes discharge temperature
+   78   T*28       ?     T  TSD   IPT impeller inlet temperature
+   79   T*29       ?     T  TSD   IPT impeller discharge temperature
+   80   T*30       ?     T  TSD   IPT discharge temperature after air input
+   81   T*31       ?     T  P     Temperature at transition duct between IPT and LPT discharge 
+   82   T*32       OSN   T  TND   LPT nozzle vanes inlet temperature
+   83   T*33       ?     T  TND   Temperature at  first stage of LPT discharge
+   84   T*34       ?     T  TND   LPT impeller inlet temperature
+   85   T*35       ?     T  TND   LPT impeller discharge temperature
+   86   T*36       ?     T  TND   LPT discharge temperature after air input
+   87   T*37       ?     T  S     Nozzle discharge temperature
+   88   T*38       ?     T  KSM   Mixer discharge temperature
+   89   T*39       ?     T  FK    Common afterburner inlet temperature
+   90   T*40       ?     T  FK    Temperature before gas bleed from common afterburner
+   91   T*41       ?     T  S     Common nozzle inlet temperature
+   92   T*42       ?     T  S     Common nozzle discharge temperature
+   93   T*43       ?     T  KVD   Temperature at 1st air bleed from HPC 
+   94   T*44       ?     T  KVD   Temperature before HPC ABV 
+   95   T*45       ?     T  PS    Temperature before booster ABV
+   96   T*46       ?     T  -     Temperature ( reserve )
+   97   T*47       ?     T  -     Temperature ( reserve )
+   98   T*48       ?     T  -     Temperature ( reserve )
+   99   T*49       ?     T  -     Temperature ( reserve )
+  100   T*50       ?     T  -     Temperature ( reserve )
+  101   G__1       ?     G  KND   Fan inlet air flow rate
+  102   G__2       ?     G  KND   Air flow at air bleed from fan 
+  103   G__3       ?     G  KND   Fan discharge air flow in bypass duct
+  104   G__4       ?     G  KND   Air flow in bypass duct after air bleed from LPC
+  105   G__5       ?     G  FK    Air flow in bypass duct at afterburner inlet
+  106   G__6       ?     G  KSM   Air flow in bypass duct at mixer inlet
+  107   G__7       ?     G  KND   Fan discharge air flow in primary duct
+  108   G__8       ?     G  PS    Booster discharge air flow
+  109   G__9       ?     G  PS    Air  flow after booster air bleed
+  110   G_10       ?     G  KSD   IPC inlet air flow
+  111   G_11       ?     G  KSD   Air flow at air bleed from IPC
+  112   G_12       ?     G  KSD   IPC discharge air flow
+  113   G_13       ?     G  KSD   Air flow at air bleed from IPC
+  114   G_14       ?     G  KVD   HPC inlet air flow
+  115   G_15       ?     G  KVD   Air flow at 2nd air bleed from HPC
+  116   G_16       ?     G  KVD   HPC discharge air flow
+  117   G_17       ?     G  KS    Combustion chamber inlet air flow
+  118   G_18       ?     G  KS    Air flow at gas bleed from combustion chamber
+  119   G_19       ?     G  KS    Combustion chamber discharge gas flow
+  120   G_20       ?     G  TVD   HPT nozzle vanes inlet gas flow
+  121   G_21       ?     G  TVD   HPT nozzle vanes discharge gas flow
+  122   G_22       ?     G  TVD   HPT impeller inlet gas flow
+  123   G_23       ?     G  TVD   HPT impeller discharge gas flow
+  124   G_24       ?     G  TVD   HPT discharge gas flow after air input
+  125   G_25       ?     G  P     Gas flow at transition duct between HPT and IPT discharge
+  126   G_26       ?     G  TSD   IPT nozzle vanes inlet gas flow
+  127   G_27       ?     G  TSD   IPT nozzle vanes discharge gas flow
+  128   G_28       ?     G  TSD   IPT impeller inlet gas flow
+  129   G_29       ?     G  TSD   IPT impeller discharge gas flow
+  130   G_30       ?     G  TSD   IPT discharge gas flow after air input
+  131   G_31       ?     G  P     Gas flow at transition duct between IPT and LPT discharge
+  132   G_32       ?     G  TND   LPT nozzle vanes inlet gas flow
+  133   G_33       ?     G  TND   Gas flow at  first stage of LPT discharge
+  134   G_34       ?     G  TND   LPT impeller inlet gas flow
+  135   G_35       ?     G  TND   LPT impeller discharge gas flow
+  136   G_36       ?     G  TND   LPT discharge gas flow after air input
+  137   G_37       ?     G  S     Nozzle discharge gas flow
+  138   G_38       ?     G  KSM   Mixer discharge gas flow
+  139   G_39       ?     G  FK    Common afterburner inlet gas flow
+  140   G_40       ?     G  FK    Gas flow before gas bleed from common afterburner
+  141   G_41       ?     G  S     Common nozzle inlet gas flow
+  142   G_42       ?     G  S     Common nozzle discharge gas flow
+  143   G_43       ?     G  KVD   Air flow at 1st air bleed from HPC
+  144   G_44       ?     G  KVD   Air flow before HPC ABV 
+  145   G_45       ?     G  PS    Air flow before booster ABV
+  146   G_46       ?     G  -     Air flow ( reserve )
+  147   G_47       ?     G  -     Air flow ( reserve )
+  148   G_48       ?     G  -     Air flow ( reserve )
+  149   G_49       ?     G  -     Air flow ( reserve )
+  150   G_50       ?     G  -     Air flow ( reserve )
+  151   n_LP       OSN   N  R     Low pressure rotor rotational speed
+  152   n_IP       OSN   N  R     Intermediate pressure rotor rotational speed
+  153   n_HP       OSN   N  R     High pressure rotor rotational speed
+  154   H          ?     B  OUT   Flight altitude
+  155   Q          ?     C  OUT   Inlet relative fuel consumption
+  156   D          ?     C  OUT   Air humidity at engine inlet
+  157   DT         ?     T  OUT   Temperature deviation from standard
+  158   Mfl        ?     C  OUT   Flight Mach number
+  159   Vfl        ?     V  OUT   Flight velocity
+  160   P0st       ?     P  OUT   Atmospheric static pressure
+  161   T0st       ?     T  OUT   Atmospheric static temperature
+  162   P0         ?     P  OUT   Atmospheric stagnation pressure
+  163   T0         ?     T  OUT   Atmospheric stagnation temperature
+  164   L_LPC      ?     L  KND   Fan air compression specific work
+  165   N_LPC      ?     W  KND   Fan power
+  166   L_LPC1     ?     L  KND   Fan primary flow air compression specific work
+  167   N_LPC1     ?     W  KND   LPC primary flow power
+  168   L_LPC2     ?     L  KND   LPC bypass flow air compression specific work
+  169   N_LPC2     ?     W  KND   LPC bypass flow power
+  170   L_IPC      ?     L  KSD   IPC air compression specific work
+  171   N_IPC      ?     W  KSD   IPC power
+  172   L_HPC      ?     L  KVD   HPC air compression specific work
+  173   N_HPC      ?     W  KVD   HPC power
+  174   L_HPT      ?     L  TVD   HPT gas expansion specific work 
+  175   N_HPT      ?     W  TVD   HPT power
+  176   L_IPT      ?     L  TSD   IPT gas expansion specific work 
+  177   N_IPT      ?     W  TSD   IPT power
+  178   L_LPT      ?     L  TND   LPT gas expansion specific work
+  179   N_LPT      OSN   W  TND   LPT power
+  180   L_B        ?     L   PS   Booster air compression specific work
+  181   N_B        ?     W   PS   Booster power
+  182   Z_LPC      HAR   C  KND   Operating point position factor for constant speed line of fan performance map
+  183   Pi_LPC     HAR   C  KND   Fan pressure ratio
+  184   G_LPCcor   HAR   G  KND   Fan corrected air flow
+  185   EFF_LPC    HAR   C  KND   Fan efficiency
+  186   n_LPCcor   HAR   N  KND   Corrected fan rotational speed
+  187   Z_LPC1     HAR   C  KN1   Operating point position factor for constant speed line of fan performance map (primary duct)
+  188   Pi_LPC1    HAR   C  KN1   Fan pressure ratio (primary duct)
+  189   G_LPC1cor  HAR   G  KN1   Fan corrected air  flow (primary duct)
+  190   EFF_LPC1   HAR   C  KN1   Fan efficiency (primary duct)
+  191   Z_LPC2     HAR   C  KN1   Operating point position factor for constant speed line of fan performance map (bypass duct)
+  192   Pi_LPC2    HAR   C  KN2   Fan pressure ratio (bypass)
+  193   G_LPC2cor  HAR   G  KN2   Fan corrected air flow (bypass)
+  194   EFF_LPC2   HAR   C  KN2   Fan efficiency (bypass)
+  195   Z_B        HAR   C   PS   Operating point position factor for constant speed line of booster performance map
+  196   Pi_B       HAR   C   PS   Booster pressure ratio
+  197   G_Bcor     HAR   G   PS   Booster corrected air flow
+  198   EFF_B      HAR   C   PS   Booster efficiency
+  199   n_Bcor     HAR   N   PS   Booster corrected rotational speed
+  200   Z_IPC      HAR   C  KN2   Operating point position factor for constant speed line of IPC map
+  201   Pi_IPC     HAR   C  KN2   IPC pressure ratio
+  202   G_IPCcor   HAR   G  KSD   IPC corrected air flow 
+  203   EFF_IPC    HAR   C  KSD   IPC efficiency
+  204   n_IPCcor   HAR   N  KSD   IPC corrected rotational speed
+  205   Z_HPC      HAR   C  KSD   Operating point position factor for constant speed line of HPC map
+  206   Pi_HPC     HAR   C  KSD   HPC pressure ratio
+  207   G_HPCcor   HAR   G  KVD   HPC corrected air flow 
+  208   EFF_HPC    HAR   C  KVD   HPC efficiency
+  209   n_HPCcor   OSN   N  KVD   HPC corrected rotational speed
+  210   Pi_HPT     HAR   C  TVD   HPT pressure ratio
+  211   A_HPT      HAR   GT TVD   HPT corrected gas flow (according to HPT performanñe map)
+  212   A_HPTcal   HAR   GT TVD   HPT corrected gas flow (calculated)
+  213   EFF_HPT    HAR   C  TVD   HPT efficiency
+  214   n_HPTcor   HAR   NT TVD   HPT corrected rotational speed
+  215   Pi_IPT      HAR   C  TSD   IPT pressure ratio
+  216   A_IPT      HAR   GT TSD   IPT corrected gas flow (according to IPT performanñe map)
+  217   A_IPTcal   HAR   GT TSD   IPT corrected gas flow (calculated)
+  218   EFF_IPT    HAR   C  TSD   IPT efficiency
+  219   n_IPTcor   HAR   NT TSD   IPT corrected rotational speed
+  220   Pi_LPT     HAR   C  TND   LPT pressure ratio
+  221   A_LPT      HAR   GT TND   LPT corrected gas flow (according to LPT performanñe map)
+  222   A_LPTcal   HAR   GT TND   LPT corrected gas flow (calculated)
+  223   EFF_LPT    HAR   C  TND   LPT efficiency
+  224   n_LPTcor   HAR   NT TND   LPT corrected rotational speed
+  225   m          OSN   C  ALL   Engine bypass ratio
+  226   P_Mst      ?     P  KSM   Mixer inlet static pressure
+  227   Gf         OSN   G  KS    Main combustion chamber fuel consumption 
+  228   Qf         ?     C  KS    Main combustion chamber relative fuel consumption
+  229   ETA_CC     ISH   C  KS    Main combustion chamber combustion efficiency
+  230   ALFA_CC    ?     C  ALL   Main combustion chamber excess air/fuel ratio
+  231   Gf_AB      ?     G  FK    Afterburner fuel consumption
+  232   Qf_AB      ?     C  FK    Afterburner relative fuel consumption
+  233   ETA_AB     ISH   C  FK    Afterburner combustion efficiency
+  234   ALFA_tot   ?     C  FK    Total excess air/fuel ratio
+  235   Gf_AB2     ?     G  FK    Bypass duct afterburner fuel consumption 
+  236   Qf_AB2     ?     C  FK    Bypass duct afterburner relative fuel consumption
+  237   ETA_AB2    ISH   C  FK    Bypass duct afterburner combustion efficiency
+  238   ALFA_AB2   ?     C  FK    Bypass duct afterburner excess air/fuel ratio
+  239   SIGMA_IN   ISH   C  VH    Intake pressure recovery factor
+  240   SIGMA_TR1  ISH   C  P     Transition duct between LPC and IPC pressure recovery factor
+  241   SIGMA_TR2  ISH   C  P     Transition duct between IPC and HPC pressure recovery factor
+  242   SIGMA_TR3  ISH   C  P     Transition duct between HPT and IPT pressure recovery factor
+  243   SIGMA_TR4  ISH   C  P     Transition duct between IPT and LPT pressure recovery factor
+  244   SIGMA_TR5  ISH   C  P     Bypass pressure recovery factor
+  245   SIGMA_TR6  ISH   C  P     Transition duct between fan and boosters pressure recovery
+  246   SIGMA_CCh  ISH   C  KS    Combustion chamber pressure recovery factor (hydraulic) 
+  247   SIGMA_CCt  ISH   C  KS    Combustion chamber pressure recovery factor (heat)
+  248   SIGMA_CC   ISH   C  KS    Combustion chamber pressure recovery factor (total)
+  249   SIGMA_AB2h ISH   C  FK    Bypass duct afterburner pressure recovery factor (hydraulic)
+  250   SIGMA_AB2t ISH   C  FK    Bypass duct afterburner pressure recovery factor (heat)
+  251   SIGMA_ABh  ISH   C  FK    Afterburner pressure recovery factor (hydraulic)
+  252   SIGMA_ABt  ISH   C  FK    Afterburner pressure recovery factor (heat)
+  253   SIGMA_AB2  ISH   C  FK    Bypass duct afterburner pressure recovery factor (total)
+  254   SIGMA_AB   ISH   C  FK    Afterburner pressure recovery factor (total)
+  255   SIGMA_N1   ISH   C  S1    Primary nozzle pressure recovery 
+  256   SIGMA_N2   ISH   C  S2    Bypass nozzle pressure recovery factor
+  257   SIGMA_M    ISH   C  KSM   Mixer pressure recovery factor
+  258   SIGMA_DD   ISH   C  ?     Pressure recovery factor in divergent duct after LPT
+  259   SIGMA_N    ISH   C  S     Nozzle pressure recovery factor
+  260   Pi_N1      ?     C  S1    Primary nozzle pressure ratio
+  261   P_N1st     ?     P  S1    Primary nozzle pressure discharge static pressure
+  262   F_N1       ISH   F  S1    Primary nozzle area  (real)
+  263   F_N1cal    ?     F  S1    Primary nozzle area  (calculated)
+  264   V_N1       ?     V  S1    Primary nozzle discharge velocity
+  265   LAM_N1     ?     C  S1    Primary nozzle discharge superficial velocity
+  266   Mu_N1      ISH   C  S1    Primary nozzle flow factor
+  267   FI_N1      ISH   C  S1    Primary nozzle velocity factor
+  268   Pi_N2      ?     C  S2    Bypass nozzle pressure ratio
+  269   P_N2st     ?     P  S2    Bypass nozzle discharge static pressure
+  270   F_N2       ISH   F  S2    Bypass nozzle area  (real)
+  271   F_N2cal    ?     F  S2    Bypass nozzle area (calculated)
+  272   V_N2       ?     V  S2    Bypass nozzle discharge velocity
+  273   LAM_N2     ?     C  S2    Bypass nozzle discharge superficial velocity
+  274   MU_N2      ISH   C  S2    Bypass nozzle flow factor
+  275   FI_N2      ISH   C  S2    Bypass nozzle efficiency
+  276   Pi_N       ?     C  S     Nozzle pressure ratio
+  277   P_Nst      ?     P  S     Nozzle discharge static pressure
+  278   F_N        ISH   F  S     Common nozzle area  (real)
+  279   F_Ncal     ?     F  S     Common nozzle area  (calculated)
+  280   V_N        ?     V  S     Common nozzle discharge velocity
+  281   LAM_N      ?     C  S     Common nozzle discharge superficial velocity
+  282   MU_N       ISH   C  S     Common nozzle flow factor
+  283   FI_N       ISH   C  S     Common nozzle velocity factor
+  284   EFFmech_LP ISH   C  R     Low pressure rotor mechanical efficiency
+  285   EFFmech_IP ISH   C  R     Intermediate pressure rotor mechanical efficiency
+  286   EFFmech_HP ISH   C  R     High pressure rotor mechanical efficiency
+  287   EFFmech_GB ISH   C  R     Gearbox mechanical efficiency
+  288   DN_LP      OTB   W  R     Power takeoffs from low pressure rotor
+  289   DN_IP      OTB   W  R     Power takeoffs from intermediate pressure rotor
+  290   DN_HP      OTB   W  R     Power takeoffs from high pressure rotor
+  291   DGc1       OTB   C  KND   Relative bleeds from fan (1 point)
+  292   DGc2       OTB   C  KND   Relative bleeds from fan (2 point)
+  293   DG?3       OTB   C  KND   Relative bleeds from fan bypass part discharge
+  294   DGc4       OTB   C  PS    Relative bleeds from boosters discharge
+  295   DGc5       OTB   C  KSD   Relative bleeds from IPC (1 point)
+  296   DG?6       OTB   C  KSD   Relative bleeds from IPC (2 point)
+  297   DGc7       OTB   C  KVD   Relative bleeds from IPC discharge
+  298   DGc8       OTB   C  KVD   Relative bleeds from HPC (1 point)
+  299   DGc9       OTB   C  KVD   Relative bleeds from HPC (2 point)
+  300   DGc10      OTB   C  KVD   Relative bleeds from HPC discharge
+  301   DGcabs1    OTB   C  KND   Absolute bleeds from fan (1 point)
+  302   DGcabs2    OTB   C  KND   Absolute bleeds from fan (2 point)
+  303   DGcabs3    OTB   C  KND   Absolute bleeds from fan bypass part discharge
+  304   DGcabs4    OTB   C  PS    Absolute bleeds from boosters discharge
+  305   DGcabs5    OTB   C  KSD   Absolute bleeds from IPC (1 point)
+  306   DGcabs6    OTB   C  KSD   Absolute bleeds from IPC (2 point)
+  307   DGcabs7    OTB   C  KVD   Absolute bleeds from IPC discharge
+  308   DGcabs8    OTB   C  KVD   Absolute bleeds from HPC (1 point)
+  309   DGcabs9    OTB   C  KVD   Absolute bleeds from HPC (2 point)
+  310   DGcabs10   OTB   C  KVD   Absolute bleeds from HPC discharge
+  311   DGt1_1     OTB   C  TVD   Relative taps of air, bled from fan (1 point), to nozzle vanes of HPT
+  312   DGt2_1     OTB   C  TVD   Relative taps of air, bled from fan (2 point), to nozzle vanes of HPT
+  313   DGt3_1     OTB   C  TVD   Relative taps of air, bled from fan discharge, to nozzle vanes of HPT
+  314   DGt4_1     OTB   C  TVD   Relative taps of air, bled from boosters discharge, to nozzle vanes of HPT
+  315   DGt5_1     OTB   C  TVD   Relative taps of air, bled from IPC (1 point), to nozzle vanes of HPT
+  316   DGt6_1     OTB   C  TVD   Relative taps of air, bled from IPC (2 point), to nozzle vanes of HPT
+  317   DGt7_1     OTB   C  TVD   Relative taps of air, bled from IPC discharge, to nozzle vanes of HPT
+  318   DGt8_1     OTB   C  TVD   Relative taps of air, bled from HPC (1 point), to nozzle vanes of HPT
+  319   DGt9_1     OTB   C  TVD   Relative taps of air, bled from HPC (2 point), to nozzle vanes of HPT
+  320   DGt10_1    OTB   C  TVD   Relative taps of air, bled from HPC discharge, to nozzle vanes of HPT
+  321   DGt1_2     OTB   C  TVD   Relative taps of air, bled from fan (1 point), to impeller of HPT
+  322   DGt2_2     OTB   C  TVD   Relative taps of air, bled from fan (2 point), to impeller of HPT
+  323   DGt3_2     OTB   C  TVD   Relative taps of air, bled from fan discharge, to impeller of HPT
+  324   DGt4_2     OTB   C  TVD   Relative taps of air, bled from boosters discharge, to impeller of HPT
+  325   DGt5_2     OTB   C  TVD   Relative taps of air, bled from IPC (1 point), to impeller of HPT
+  326   DGt6_2     OTB   C  TVD   Relative taps of air, bled from IPC (2 point), to impeller of HPT
+  327   DGt7_2     OTB   C  TVD   Relative taps of air, bled from IPC discharge, to impeller of HPT
+  328   DGt8_2     OTB   C  TVD   Relative taps of air, bled from HPC (1 point), to impeller of HPT
+  329   DGt9_2     OTB   C  TVD   Relative taps of air, bled from HPC (2 point), to impeller of HPT
+  330   DGt10_2    OTB   C  TVD   Relative taps of air, bled from HPC discharge, to impeller of HPT
+  331   DGt1_3     OTB   C  TVD   Relative taps of air, bled from fan (1 point), to HPT discharge
+  332   DGt2_3     OTB   C  TVD   Relative taps of air, bled from fan (2 point), to HPT discharge
+  333   DGt3_3     OTB   C  TVD   Relative taps of air, bled from fan discharge, to HPT discharge
+  334   DGt4_3     OTB   C  TVD   Relative taps of air, bled from boosters discharge, to HPT discharge
+  335   DGt5_3     OTB   C  TVD   Relative taps of air, bled from IPC (1 point), to HPT discharge
+  336   DGt6_3     OTB   C  TVD   Relative taps of air, bled from IPC (2 point), to HPT discharge
+  337   DGt7_3     OTB   C  TVD   Relative taps of air, bled from IPC discharge, to HPT discharge
+  338   DGt8_3     OTB   C  TVD   Relative taps of air, bled from HPC (1 point), to HPT discharge
+  339   DGt9_3     OTB   C  TVD   Relative taps of air, bled from HPC (2 point), to HPT discharge
+  340   DGt10_3    OTB   C  TVD   Relative taps of air, bled from HPC discharge, to HPT discharge
+  341   DGt1_4     OTB   C  TSD   Relative taps of air, bled from fan (1 point), to nozzle vanes of IPT
+  342   DGt2_4     OTB   C  TSD   Relative taps of air, bled from fan (2 point), to nozzle vanes of IPT
+  343   DGt3_4     OTB   C  TSD   Relative taps of air, bled from fan discharge, to nozzle vanes of IPT
+  344   DGt4_4     OTB   C  TSD   Relative taps of air, bled from boosters discharge, to nozzle vanes of IPT
+  345   DGt5_4     OTB   C  TSD   Relative taps of air, bled from IPC (1 point), to nozzle vanes of IPT
+  346   DGt6_4     OTB   C  TSD   Relative taps of air, bled from IPC (2 point), to nozzle vanes of IPT
+  347   DGt7_4     OTB   C  TSD   Relative taps of air, bled from IPC discharge, to nozzle vanes of IPT
+  348   DGt8_4     OTB   C  TSD   Relative taps of air, bled from HPC (1 point), to nozzle vanes of IPT
+  349   DGt9_4     OTB   C  TSD   Relative taps of air, bled from HPC (2 point), to nozzle vanes of IPT
+  350   DGt10_4    OTB   C  TSD   Relative taps of air, bled from HPC discharge, to nozzle vanes of IPT
+  351   DGt1_5     OTB   C  TSD   Relative taps of air, bled from fan (1 point), to impeller of IPT
+  352   DGt2_5     OTB   C  TSD   Relative taps of air, bled from fan (2 point), to impeller of IPT
+  353   DGt3_5     OTB   C  TSD   Relative taps of air, bled from fan discharge, to impeller of IPT
+  354   DGt4_5     OTB   C  TSD   Relative taps of air, bled from boosters discharge, to impeller of IPT
+  355   DGt5_5     OTB   C  TSD   Relative taps of air, bled from IPC (1 point), to impeller of IPT
+  356   DGt6_5     OTB   C  TSD   Relative taps of air, bled from IPC (2 point), to impeller of IPT
+  357   DGt7_5     OTB   C  TSD   Relative taps of air, bled from IPC discharge, to impeller of IPT
+  358   DGt8_5     OTB   C  TSD   Relative taps of air, bled from HPC (1 point), to impeller of IPT
+  359   DGt9_5     OTB   C  TSD   Relative taps of air, bled from HPC (2 point), to impeller of IPT
+  360   DGt10_5    OTB   C  TSD   Relative taps of air, bled from HPC discharge, to impeller of IPT
+  361   DGt1_6     OTB   C  TSD   Relative taps of air, bled from fan (1 point), to IPT discharge
+  362   DGt2_6     OTB   C  TSD   Relative taps of air, bled from fan (2 point), to IPT discharge
+  363   DGt3_6     OTB   C  TSD   Relative taps of air, bled from fan discharge, to IPT discharge
+  364   DGt4_6     OTB   C  TSD   Relative taps of air, bled from boosters discharge, to IPT discharge
+  365   DGt5_6     OTB   C  TSD   Relative taps of air, bled from IPC (1 point), to IPT discharge
+  366   DGt6_6     OTB   C  TSD   Relative taps of air, bled from IPC (2 point), to IPT discharge
+  367   DGt7_6     OTB   C  TSD   Relative taps of air, bled from IPC discharge, to IPT discharge
+  368   DGt8_6     OTB   C  TSD   Relative taps of air, bled from HPC (1 point), to IPT discharge
+  369   DGt9_6     OTB   C  TSD   Relative taps of air, bled from HPC (2 point), to IPT discharge
+  370   DGt10_6    OTB   C  TSD   Relative taps of air, bled from HPC discharge, to IPT discharge
+  371   DGt1_7     OTB   C  TND   Relative taps of air, bled from fan (1 point), to nozzle vanes of LPT
+  372   DGt2_7     OTB   C  TND   Relative taps of air, bled from fan (2 point), to nozzle vanes of LPT
+  373   DGt3_7     OTB   C  TND   Relative taps of air, bled from fan discharge, to nozzle vanes of LPT
+  374   DGt4_7     OTB   C  TND   Relative taps of air, bled from boosters discharge, to nozzle vanes of LPT
+  375   DGt5_7     OTB   C  TND   Relative taps of air, bled from IPC (1 point), to nozzle vanes of LPT
+  376   DGt6_7     OTB   C  TND   Relative taps of air, bled from IPC (2 point), to nozzle vanes of LPT
+  377   DGt7_7     OTB   C  TND   Relative taps of air, bled from IPC discharge, to nozzle vanes of LPT
+  378   DGt8_7     OTB   C  TND   Relative taps of air, bled from HPC (1 point), to nozzle vanes of LPT
+  379   DGt9_7     OTB   C  TND   Relative taps of air, bled from HPC (2 point), to nozzle vanes of LPT
+  380   DGt10_7    OTB   C  TND   Relative taps of air, bled from HPC discharge, to nozzle vanes of LPT
+  381   DGt1_8     OTB   C  TND   Relative taps of air, bled from fan (1 point), to impeller of LPT
+  382   DGt2_8     OTB   C  TND   Relative taps of air, bled from fan (2 point), to impeller of LPT
+  383   DGt3_8     OTB   C  TND   Relative taps of air, bled from fan discharge, to impeller of LPT
+  384   DGt4_8     OTB   C  TND   Relative taps of air, bled from boosters discharge, to impeller of LPT
+  385   DGt5_8     OTB   C  TND   Relative taps of air, bled from IPC (1 point), to impeller of LPT
+  386   DGt6_8     OTB   C  TND   Relative taps of air, bled from IPC (2 point), to impeller of LPT
+  387   DGt7_8     OTB   C  TND   Relative taps of air, bled from IPC discharge, to impeller of LPT
+  388   DGt8_8     OTB   C  TND   Relative taps of air, bled from HPC (1 point), to impeller of LPT
+  389   DGt9_8     OTB   C  TND   Relative taps of air, bled from HPC (2 point), to impeller of LPT
+  390   DGt10_8    OTB   C  TND   Relative taps of air, bled from HPC discharge, to impeller of LPT
+  391   DGt1_9     OTB   C  TND   Relative taps of air, bled from fan (1 point), to LPT discharge
+  392   DGt2_9     OTB   C  TND   Relative taps of air, bled from fan (2 point), to LPT discharge
+  393   DGt3_9     OTB   C  TND   Relative taps of air, bled from fan discharge, to LPT discharge
+  394   DGt4_9     OTB   C  TND   Relative taps of air, bled from boosters discharge, to LPT discharge
+  395   DGt5_9     OTB   C  TND   Relative taps of air, bled from IPC (1 point), to LPT discharge
+  396   DGt6_9     OTB   C  TND   Relative taps of air, bled from IPC (2 point), to LPT discharge
+  397   DGt7_9     OTB   C  TND   Relative taps of air, bled from IPC discharge, to LPT discharge
+  398   DGt8_9     OTB   C  TND   Relative taps of air, bled from HPC (1 point), to LPT discharge
+  399   DGt9_9     OTB   C  TND   Relative taps of air, bled from HPC (2 point), to LPT discharge
+  400   DGt10_9    OTB   C  TND   Relative taps of air, bled from HPC discharge, to LPT discharge
+  401   DGt1_10    OTB   C  FK    Relative taps of air, bled from fan (1 point), to afterburner
+  402   DGt2_10    OTB   C  FK    Relative taps of air, bled from fan (2 point), to afterburner
+  403   DGt3_10    OTB   C  FK    Relative taps of air, bled from fan discharge, to afterburner
+  404   DGt4_10    OTB   C  FK    Relative taps of air, bled from boosters discharge, to afterburner
+  405   DGt5_10    OTB   C  FK    Relative taps of air, bled from IPC (1 point), to afterburner
+  406   DGt6_10    OTB   C  FK    Relative taps of air, bled from IPC (2 point), to afterburner
+  407   DGt7_10    OTB   C  FK    Relative taps of air, bled from IPC discharge, to afterburner
+  408   DGt8_10    OTB   C  FK    Relative taps of air, bled from HPC (1 point), to afterburner
+  409   DGt9_10    OTB   C  FK    Relative taps of air, bled from HPC (2 point), to afterburner
+  410   DGt10_10   OTB   C  FK    Relative taps of air, bled from HPC discharge, to afterburner
+  411   DGt1_11    OTB   C  S     Relative taps of air, bled from fan (1 point), to common nozzle
+  412   DGt2_11    OTB   C  S     Relative taps of air, bled from fan (2 point), to common nozzle
+  413   DGt3_11    OTB   C  S     Relative taps of air, bled from fan discharge, to common nozzle
+  414   DGt4_11    OTB   C  S     Relative taps of air, bled from boosters discharge, to common nozzle
+  415   DGt5_11    OTB   C  S     Relative taps of air, bled from IPC (1 point), to common nozzle
+  416   DGt6_11    OTB   C  S     Relative taps of air, bled from IPC (2 point), to common nozzle
+  417   DGt7_11    OTB   C  S     Relative taps of air, bled from IPC discharge, to common nozzle
+  418   DGt8_11    OTB   C  S     Relative taps of air, bled from HPC (1 point), to common nozzle
+  419   DGt9_11    OTB   C  S     Relative taps of air, bled from HPC (2 point), to common nozzle
+  420   DGt10_11   OTB   C  S     Relative taps of air, bled from HPC discharge, to common nozzle
+  421   Time       OSN   TM ALL   Time (Operation mode number in statis analysis)
+  422   Apcl       OSN   AN ALL   Power control lever position
+  423   Phpc_st    ?     P  KVD   Static pressure at HPC discharge 
+  424   Pi*c_to    OSN   C  ALL   Total compressor pressure ratio (total parameters are used)
+  425   Gf_kg/h    OSN   C  KS    Fuel consumption in main combustion chamber (kg/h)
+  426   Gf_ cor    ?     G  KS    Corrected to standard atmosphere fuel consumption
+  427   Cå         OSN   CE ALL   Specific fuel consumption
+  428   R_N1       ?     R  S     Primary nozzle thrust
+  429   R_N2       ?     R  S     Secondary nozzle thrust
+  430   Rtot       OSN   R  ALL   Total thrust
+  431   Rtot_kg    ?     C  ALL   Total thrust, (kg)
+  432   Rsp        ?     -  -     Specific thrust
+  433   n'LPR      ?     N1 R     Time derivative of LP rotor rotational speed
+  434   n'IPR      ?     N1 R     Time derivative of IP rotor rotational speed
+  435   n'HPR      ?     N1 R     Time derivative of HP rotor rotational speed
+  436   n'LPR_cor  ?     N1 R     Corrected time derivative of LP rotor rotational speed
+  437   n'HPR_cor  ?     N1 R     Corrected time derivative of HP rotor rotational speed
+  438   Pic_tot    ?     C  ALL   Total pressure ratio (experimental static pressure at HPC outlet/static pressure at engine inlet station)
+  439   Sdecel     PRZ   C  ALL   Deceleration indicator ( mode parameter diminution )
+  440   N_LPC_hp   ?     C  KVD   LPC power (hp)
+  441   N_IPC_hp   ?     C  KVD   IPC power (hp)
+  442   N_HPC_hp   ?     C  KVD   HPC power (hp)
+  443   N_LPT_hp   ?     C  TND   LPT power (hp)
+  444   N_IPT_hp   ?     C  TND   IPT power (hp)
+  445   N_HPT_hp   ?     C  TVD   HPT power (hp)
+  446   A_HPT*     ?     ?  TVD   Corrected gas flow rate in HPT (technical system)
+  447   A_IPT*     ?     ?  TÑD   Corrected gas flow rate in IPT (technical system)
+  448   A_LPT*     ?     ?  TND   Corrected gas flow rate in LPT (technical system)
+  449   Srest_st   PRZ   C  PS    Restarting from booster indicator
+  450   P_HPC_me   ?     P  KVD   Measured pressure value at HPC discharge station
+  451   G_N2_cor   ?     -  S2    Corrected secondary nozzle gas flow rate
+  452   G_N1_cor   ?     -  S1    Corrected primary nozzle gas flow rate
+  453   G_N__cor   ?     -  S     Corrected common nozzle gas flow rate
+  454   LAMmix     ?     C  KSM   Mixer superficial velocity
+  455   P_mix_st   ?     P  KSM   Static pressure at mixing chamber inlet 
+  456   dKU_LPC    ISH   C  KND   LPC stability factor
+  457   dKU_IPC    OSN   C  KSD   IPC stability factor
+  458   dKU_HPC    OSN   C  KVD   HPC stability factor
+  459   dKU_B      OSN   C  PS    Booster stability factor
+  460   dKU_LPC_OL ?     -   -    LPC stability factor relative to operating line
+  461   dKU_IPC_OL ?     -   -    IPC stability factor relative to operating line
+  462   dKU_HPC_OL ?     -   -    HPC stability factor relative to operating line
+  463   Ncon_ACS   ISH   C  SAU   ACS active controller number
+  464   KPI_F      ?     -  KND   Fan pressure ratio correction adjustment
+  465   KEFF_F     ?     -  KND   Fan efficiency correction adjustment
+  466   Pi_T_tot   ?     C  ALL   Total turbine pressure ratio
+  467   Sbleed_ipc PRZ   C  RDL   IPC bleed indicator
+  468   Sbleed_HPC PRZ   C  RDL   HPC bleed indicator
+  469   S_HPC_IGV  PRZ   C  KVD   HPC IGV reposition indicator (needed for dynamics)
+  470   V_TC       ?     -   -    Velocity at temperature probe position
+  471   T_TP       ?     T   -    Temperature measured by temperature probe
+  472   Eps_TC     ?     -  -     Temperature probe time constant
+  473   Time3      ?     -  -     Time derivative
+  474   N_IPcor0   OSN   N  R     IP rotor rotational speed corrected to engine inlet
+  475   N_HPcor0   OSN   N  R     HP rotor rotational speed corrected to engine inlet
+  476   T_IPcor0   OSN   T  R     Inlet corrected gas temperature over IP rotor
+  477   T_LPcor0   OSN   T  R     Inlet corrected gas temperature over LP rotor
+  478   Tg_cor0    OSN   T  R     Inlet Corrected gas temperature over LP rotor
+  479   N_CM       -     -  -     Compressor mechanization segment number in static model
+  480   Mtorq_FT   -     -  -     Free turbine torsion torque
+  481   P_HPC_abs  -     -  -     Total pressure at HPC discharge station
+  482   Pin_atm    -     -  -     Ambient pressure
+  483   Tin_C      -     -  -     Ambient temperature in degrees Celsius
+  484   T19_C      -     -  -     Temperature at HPC discharge station in degrees Celsius
+  485   T29_C      -     -  -     Temperature
+  486   N_FT_kW    -     -  -     Free turbine power in kW
+  487   P16tech    -     -  -     Pressure at HPC discharge station in kgf
+  488   EFF_ef     -     -  -     Effective efficiency
+  489   dT_CC_rel  ?     -  KS    Relative temperature change in combustion chamber
+  490   DTsh       ?     -   -    Shift coefficient
+  491   S0         ?     -   -    Low pressure rotor slip
+  492   S01        ?     -   -    Rotors slip (ratio)
+  493   Ï*Cst      OSN   C  ALL   Total pressure ratio(calculated as Ðhpc.st/P*in)
+  601   G__1_cor   ?     G  KND   Fan inlet corrected gas flow rate
+  602   G__2_cor   ?     G  KND   Corrected air flow rate at fan air bleed station
+  603   G__3_cor   ?     G  KND   Fan discharge corrected gas flow rate in bypass duct
+  604   G__4_cor   ?     G  KND   Corrected air flow rate after air bleed  from LPC in bypass duct
+  605   G__5_cor   ?     G  FK    Corrected gas flow rate in bypass duct at afterburner inlet
+  606   G__6_cor   ?     G  KSM   Corrected gas flow rate in bypass duct at mixer inlet
+  607   G__7_cor   ?     G  KND   Fan discharge corrected air flow rate in primary duct
+  608   G__8_cor   ?     G  PS    Booster corrected air flow rate
+  609   G__9_cor   ?     G  PS    Corrected air flow rate after booster air bleed
+  610   G_10_cor   ?     G  KSD   IPC inlet corrected air flow rate
+  611   G_11_cor   ?     G  KSD   Corrected air flow rate at air bleed from IPC
+  612   G_12_cor   ?     G  KSD   IPC discharge corrected air flow rate
+  613   G_13_cor   ?     G  KSD   Corrected air flow rate at air bleed from IPC
+  614   G_14_cor   ?     G  KVD   HPC inlet corrected air flow rate
+  615   G_15_cor   ?     G  KVD   Corrected air flow rate at 2nd air bleed from HPC
+  616   G_16_cor   ?     G  KVD   Corrected air flow rate discharge pressure
+  617   G_17_cor   ?     G  KS    Combustion chamber inlet corrected air flow rate
+  618   G_18_cor   ?     G  KS    Corrected gas flow rate at gas bleed from combustion chamber
+  619   G_19_cor   ?     G  KS    Combustion chamber discharge corrected gas flow rate
+  620   G_20_cor   ?     G  TVD   HPT nozzle vanes inlet corrected gas flow rate
+  621   G_21_cor   ?     G  TVD   HPT nozzle vanes discharge corrected gas flow rate
+  622   G_22_cor   ?     G  TVD   HPT impeller inlet corrected gas flow rate
+  623   G_23_cor   ?     G  TVD   HPT impeller discharge corrected gas flow rate
+  624   G_24_cor   ?     G  TVD   HPT discharge corrected gas flow rate after air input
+  625   G_25_cor   ?     G  P     Corrected gas flow rate at transition duct between HPT and IPT discharge
+  626   G_26_cor   ?     G  TSD   IPT nozzle vanes inlet corrected gas flow rate
+  627   G_27_cor   ?     G  TSD   IPT nozzle vanes discharge corrected gas flow rate
+  628   G_28_cor   ?     G  TSD   IPT impeller inlet corrected gas flow rate
+  629   G_29_cor   ?     G  TSD   IPT impeller discharge corrected gas flow rate
+  630   G_30_cor   ?     G  TSD   IPT discharge corrected gas flow rate after air input
+  631   G_31_cor   ?     G  P     Corrected gas flow rate at transition duct between IPT and LPT discharge
+  632   G_32_cor   ?     G  TND   LPT nozzle vanes inlet corrected gas flow rate
+  633   G_33_cor   ?     G  TND   LPT nozzle vanes discharge corrected gas flow rate
+  634   G_34_cor   ?     G  TND   LPT impeller inlet corrected gas flow rate
+  635   G_35_cor   ?     G  TND   LPT impeller discharge corrected gas flow rate
+  636   G_36_cor   ?     G  TND   LPT discharge corrected gas flow rate after air input
+  637   G_37_cor   ?     G  S     Nozzle discharge corrected gas flow rate
+  638   G_38_cor   ?     G  KSM   Mixer discharge corrected gas flow rate
+  639   G_39_cor   ?     G  FK    Common afterburner corrected gas flow rate
+  640   G_40_cor   ?     G  FK    Corrected gas flow rate before gas bleed from common afterburner
+  641   G_41_cor   ?     G  S     Common nozzle inlet corrected gas flow rate
+  642   G_42_cor   ?     G  S     Common nozzle discharge corrected gas flow rate
+  643   G_43_cor   ?     G  KVD   Corrected air flow rate at 1st air bleed from HPC
+  644   G_44_cor   ?     G  KVD   Corrected air flow rate before HPC ABV
+  645   G_45_cor   ?     G  PS    Corrected air  flow rate before booster ABV
+  646   G_46_cor   ?     G  -     Corrected air flow rate ( reserve )
+  647   G_47_cor   ?     G  -     Corrected air flow rate ( reserve )
+  648   G_48_cor   ?     G  -     Corrected air flow rate ( reserve )
+  649   G_49_cor   ?     G  -     Corrected air flow rate ( reserve )
+  650   G_50_cor   ?     G  -     Corrected air flow rate ( reserve )
+-1
+....................................................................
+ Key   Designation
+                   Type
+                         Physical value
+                            Unit
+                                  Designation
+[nodes]
+     0  ALL   1 engine as a whole
+     1  FK    1 afterburner
+     2  KND   1 low pressure compressor+
+     3  KN1   1 low pressure compressor (primary duct)
+     4  KN2   1 low pressure compressor (bypass)
+     5  KS    1 combustion chamber+
+     6  KSD   1 intermediate pressure compressor+
+     7  KSM   1 mixer+
+     8  KVD   1 high pressure compressor+
+     9  NGR   0 load
+    10  OUT   0 aircraft and atmosphere (outside the engine)
+    11  P     1 transition ducts (Ð1,Ð2,Ð3,Ð4,Ð5)
+    12  PS    1 booster
+    13  R     0 rotors
+    14  S     1 nozzle
+    15  S1    1 primary nozzle
+    16  S2    1 secondary nozzle
+    17  STR   0 starting
+    18  TND   1 low pressure turbine
+    19  TSD   1 intermediate pressure turbine
+    20  TVD   1 high pressure turbine
+    21  VH    1 intake
+    22  -     1 others
+    23  ?     1 specification needed
+    24  SAU   0 automatic control system
+    -1                     
+1/0: 1 - use for performances, 0 - do not use
+
+[filters node parametrs]
+ALL                        
+ALL KS                     
+KS                         
+KVD                        
+NGR                        
+OUT                        
+TND                        
+TND TVD                    
+TVD                        
+SAU                        
+-1                         
+[Filters node characteristics]
+KND                        
+KND KS                     
+KS                         
+KSD                        
+KVD                        
+TND                        
+TSD                        
+TVD                        
+-1                         
+                           
+[Parameters types]
+     0 1 OSN engine main parameters
+     1 1 HAR unit performances
+     2 1 ISH initial data
+     3 1 OTB bleeds(takeoffs), taps
+     4 1 PRZ indicators
+     5 1 ?   specification needed
+     6 1 -   others
+-1                         
+1/0: 1 - use for filter, 0 - do not use
+[Ôèëüòðû òèïîâ ïàðàìåòðîâ]
+OSN                        
+HAR                        
+ISH                        
+OTB                        
+PRZ                        
+?                          
+-1                         
+                           
+[The values of the parameters]
+     0 0 AN    deg            -          -             angle
+     1 0 B     m              -          -             length
+     2 1 C     -              -          -             dimensionless coefficient
+     3 0 F     m^2            -          -             area
+     4 1 G     kg/s           kg/hour     -            massflow rate
+     5 0 GT    sqrt(kg*K*m)   tech        -            corrected massflow rate
+     6 0 GU    kg/s/W        kg/hour/hp  -             specific massflow rate
+     7 0 L     J              -          -             work
+     8 0 M     N*m            -          -             torque moment
+     9 1 N     1/min          1/s        -             rotational speed
+    10 0 N1    1/min/s        -          -             derivative of rotational speed
+    11 0 NT    1/min/sqrt(Ê)  -          -             corrected turbine rotational speed
+    12 1 P     Pa             -          -             pressure
+    13 0 R     N              kgf        -             force
+    14 0 RO    kg/m^3         -          -             density
+    15 1 T     K              C          -             temperature
+    16 0 T1    K/s            -          -             derivative of temperature
+    17 0 TM    s              -          -             time
+    18 0 V     m/s            -          -             velocity
+    19 1 W     W              hp         kW            power
+    20 0 01    Pa/s           -          -             derivative of pressure
+    21 0 ?     -              -          -             specification needed
+    22 0 -     -              -          -             others
+    23 0 PP    kg/sm**2       -          -             pressure
+-1                         
+1/0: 1 - use for filter, 0 - do not use
+[Ôèëüòðû âåëè÷èí ïàðàìåòðîâ]
+C                          
+G                          
+N                          
+P                          
+T                          
+W                          
+-1                         
+                           
+[Types of characteristics]
+     0 1 1   top-prior
+     1 1 ?   specification needed
+     2 0 -   other
+-1                         
+1/0: 1 - use for filter, 0 - do not use
+
+[Ôèëüòðû òèïîâ õàðàêòåðèñòèê]
+1                          
+-1                         
+                           
+[Odds Formats]
+     0 0 A   First type turning
+     1 0 B   Second type turning
+     2 1 C   Shift along performance axis
+     3 0 -   others
+-1                         
+[Ôèëüòðû êîýôôèöèåíòîâ]
+C                          
+-1                         
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+
