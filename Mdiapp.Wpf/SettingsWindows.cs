@@ -44,12 +44,13 @@ namespace Mdiapp.Wpf
             if(projects.Count==0)panel.Children.Add(new TextBlock{Text="В реестре старой программы нет списка ProjectList.",Margin=new Thickness(8)});
             if(present!=null)present(window);else window.ShowDialog();
         }
-        public static bool CreateEngine(ApplicationSettings settings,LegacyEngineProfile profile=null,string sourceRoot=null,Action<Window> present=null)
+        public static bool CreateEngine(ApplicationSettings settings,LegacyEngineProfile profile=null,string sourceRoot=null,Action<Window> present=null,Unit3Engine editing=null)
         {
             var panel=new DockPanel{Margin=new Thickness(2,6,2,2)};
             var fields=Enumerable.Range(0,7).Select(i=>new TextBox{Name="EngineField"+i,MinWidth=0,Margin=new Thickness(0),Padding=new Thickness(2),Height=21,VerticalContentAlignment=VerticalAlignment.Center}).ToArray();
             if(profile!=null){fields[0].Text=profile.Name;fields[1].Text=profile.Get("Key");fields[2].Text=profile.Get("Project description");fields[3].Text=profile.SourcePath(sourceRoot,profile.Get("Executable files directiory"));fields[4].Text=profile.SourcePath(sourceRoot,profile.Get("Characteristic files"));fields[5].Text=profile.SourcePath(sourceRoot,profile.Get("DopParFileName"));fields[6].Text=profile.SourcePath(sourceRoot,profile.Get("BmpFileName"));}
-            var window=Ui.Dialog(profile==null?"Создание проекта двигателя":"Импорт проекта двигателя",panel,524,300);window.ResizeMode=ResizeMode.NoResize;bool busy=false;window.Closing+=(s,e)=>e.Cancel=busy;
+            if(editing!=null){string folder=Path.Combine(settings.DataDirectory,editing.Name);fields[0].Text=editing.Name;fields[1].Text=editing.Code.ToString();fields[2].Text=editing.Description??"";fields[3].Text=Path.Combine(folder,"bin");fields[4].Text=Path.Combine(folder,"data");string local=Path.Combine(folder,settings.Language);fields[5].Text=File.Exists(Path.Combine(local,"namepar1.txt"))?Path.Combine(local,"namepar1.txt"):"";fields[6].Text=File.Exists(Path.Combine(local,"PROJECT.BMP"))?Path.Combine(local,"PROJECT.BMP"):"";}
+            var window=Ui.Dialog(editing!=null?"Редактирование проекта двигателя":profile==null?"Создание проекта двигателя":"Импорт проекта двигателя",panel,524,300);window.ResizeMode=ResizeMode.NoResize;bool busy=false;window.Closing+=(s,e)=>e.Cancel=busy;
             var footer=new StackPanel{Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Right,Margin=new Thickness(0,8,2,4)};DockPanel.SetDock(footer,Dock.Bottom);panel.Children.Add(footer);
             var create=new Button{Content=profile==null?"OK":"Импортировать",IsDefault=true,Width=74,Height=24,Padding=new Thickness(4,2,4,2),Margin=new Thickness(4)};footer.Children.Add(create);
             var cancel=Ui.Button("Отмена",()=>window.DialogResult=false);cancel.Width=74;cancel.Height=24;cancel.Padding=new Thickness(4,2,4,2);cancel.IsCancel=true;footer.Children.Add(cancel);
@@ -69,7 +70,7 @@ namespace Mdiapp.Wpf
                     byte[] bytes=null;string picturePath=fields[6].Text.Trim();if(picturePath.Length>0){if(!File.Exists(picturePath))throw new FileNotFoundException("Не найден файл изображения. Выберите существующий файл или оставьте поле пустым.",picturePath);var image=new BitmapImage();image.BeginInit();image.CacheOption=BitmapCacheOption.OnLoad;image.UriSource=new Uri(Path.GetFullPath(picturePath));image.EndInit();var encoder=new BmpBitmapEncoder();encoder.Frames.Add(BitmapFrame.Create(image));using(var stream=new MemoryStream()){encoder.Save(stream);bytes=stream.ToArray();}}
                     var request=new EngineCreationRequest{Name=fields[0].Text.Trim(),Code=code,Description=fields[2].Text,CalculationDirectory=fields[3].Text.Trim(),DataDirectory=fields[4].Text.Trim(),ParameterFile=fields[5].Text.Trim(),PictureBmp=bytes};
                     busy=true;panel.IsEnabled=false;progress.Visibility=Visibility.Visible;var report=new Progress<int>(v=>progress.Value=v);
-                    await Task.Run(()=>profile==null?EngineCreation.Create(settings.DataDirectory,settings.Language,request,report):EngineImport.Import(settings.DataDirectory,settings.Language,profile,request,sourceRoot,report));
+                    if(editing!=null){await Task.Run(()=>EngineCreation.Update(settings.DataDirectory,settings.Language,editing.Name,request,report));if(settings.Engine==editing.Name)settings.ApplyEngine(new EngineOption(request.Name,request.Description,request.Code));}else await Task.Run(()=>profile==null?EngineCreation.Create(settings.DataDirectory,settings.Language,request,report):EngineImport.Import(settings.DataDirectory,settings.Language,profile,request,sourceRoot,report));
                     busy=false;window.DialogResult=true;
                 }
                 catch(Exception error){MessageBox.Show(window,error.Message,"Ошибка двигателя");}
@@ -79,6 +80,7 @@ namespace Mdiapp.Wpf
         }
     }
 }
+
 
 
 

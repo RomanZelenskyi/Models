@@ -91,9 +91,9 @@ namespace Mdiapp.Wpf
                 if(editor!=null&&selected!=next&&(HasChanges(editor)||Snapshot(engines)!=enginesBaseline)){var answer=MessageBox.Show(window,"Сохранить настройки текущего проекта перед переключением?","Настройки проекта",MessageBoxButton.YesNoCancel);if(answer==MessageBoxResult.Cancel){restoring=true;grid.SelectedItem=selected;restoring=false;return;}if(answer==MessageBoxResult.Yes){try{save();}catch(Exception error){MessageBox.Show(window,error.Message);restoring=true;grid.SelectedItem=selected;restoring=false;return;}}}
                 try{editor=Create(settings,next.Name,true,save);selected=next;host.Content=editor;refresh();}catch(Exception error){MessageBox.Show(window,error.Message);}
             };
-            Action reload=()=>{var refreshed=new Unit3Model(settings.DataDirectory,settings.Language,settings.Engine);restoring=true;engines.Clear();foreach(var item in refreshed.Engines)engines.Add(item);restoring=false;editor=null;selected=null;grid.SelectedItem=engines.FirstOrDefault(item=>item.Name==settings.Engine)??engines.FirstOrDefault();};
+            Action reload=()=>{var refreshed=new Unit3Model(settings.DataDirectory,settings.Language,settings.Engine);restoring=true;engines.Clear();foreach(var item in refreshed.Engines)engines.Add(item);restoring=false;editor=null;selected=null;host.Content=null;enginesBaseline=Snapshot(engines);grid.SelectedItem=engines.FirstOrDefault(item=>item.Name==settings.Engine)??engines.FirstOrDefault();};
             leftButtons.Children.Add(Ui.Button("Добавить",()=>{save();if(SettingsWindows.CreateEngine(settings))reload();}));
-            leftButtons.Children.Add(Ui.Button("Импортировать",()=>{save();SettingsWindows.ImportEngine(settings);reload();}));
+            leftButtons.Children.Add(Ui.Button("Редактировать",()=>{if(selected==null)return;if(HasChanges(editor)||Snapshot(engines)!=enginesBaseline)save();if(SettingsWindows.CreateEngine(settings,editing:selected))reload();}));
             leftButtons.Children.Add(Ui.Button("Удалить",()=>{if(selected==null)return;if(MessageBox.Show(window,"Удалить проект из списка? Файлы двигателя останутся на диске.","Настройки проекта",MessageBoxButton.OKCancel)!=MessageBoxResult.OK)return;var latest=new Unit3Model(settings.DataDirectory,settings.Language,selected.Name);latest.Engines.RemoveAll(item=>item.Name==selected.Name);latest.Save();reload();}));
             leftButtons.Children.Add(Ui.Button("Применить",save));
             refresh=()=>{bool dirty=false;if(editor!=null){try{dirty=HasChanges(editor)||Snapshot(engines)!=enginesBaseline;}catch{dirty=true;}}foreach(var button in Descendants(root).OfType<Button>().Where(b=>Equals(b.Content,InterfaceText.Translate("Применить"))))button.IsEnabled=dirty;};
@@ -151,6 +151,8 @@ Ui.Tab(tabs,"Конфигурации",dock);apply.Add(()=>{values.Clear();value
         }
     }
 }
+
+
 
 
 

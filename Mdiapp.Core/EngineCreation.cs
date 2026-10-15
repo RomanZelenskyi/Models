@@ -89,6 +89,40 @@ namespace Mdiapp.Core
                 if (moved && !registered && Directory.Exists(destination)) Directory.Delete(destination, true);
             }
         }
+        public static void Update(string root,string language,string originalName,EngineCreationRequest request,IProgress<int> progress=null)
+        {
+            root=Path.GetFullPath(root);ValidateName(language);ValidateName(originalName);ValidateName(request.Name);
+            if(request.Code<1||request.Code>100)throw new InvalidDataException("Номер двигателя должен быть от 1 до 100.");
+            if((request.Description??"").IndexOfAny(new[]{'\r','\n'})>=0)throw new InvalidDataException("Описание должно занимать одну строку.");
+            if(request.PictureBmp!=null&&(request.PictureBmp.Length<2||request.PictureBmp[0]!='B'||request.PictureBmp[1]!='M'))throw new InvalidDataException("Неверный формат изображения.");
+            string original=Path.Combine(root,originalName),destination=Path.Combine(root,request.Name),catalogPath=Path.Combine(root,language,"jobs.ini");
+            if(!Directory.Exists(original))throw new DirectoryNotFoundException(original);
+            var catalog=IniFile.Load(catalogPath);int slot=0;
+            for(int i=1;i<=catalog.GetInt("Engine","count");i++){if(string.Equals(catalog.Get("Engine","n"+i),originalName,StringComparison.OrdinalIgnoreCase)){slot=i;continue;}if(catalog.GetInt("Engine","nn"+i)==request.Code||string.Equals(catalog.Get("Engine","n"+i),request.Name,StringComparison.OrdinalIgnoreCase))throw new InvalidDataException("Такое имя или номер двигателя уже используется.");}
+            if(slot==0)throw new InvalidDataException("Проект отсутствует в каталоге.");
+            if(!string.Equals(original,destination,StringComparison.OrdinalIgnoreCase)&&(Directory.Exists(destination)||File.Exists(destination)))throw new IOException("Папка с таким именем уже существует.");
+            ValidateSource(request.CalculationDirectory,root,true);ValidateSource(request.DataDirectory,root,true);ValidateSource(request.ParameterFile,root,false);
+            string staging=Path.Combine(root,".editing-"+Guid.NewGuid().ToString("N")),backup=Path.Combine(root,originalName+".backup-"+Guid.NewGuid().ToString("N")),catalogTemp=catalogPath+".editing-"+Guid.NewGuid().ToString("N");bool moved=false,installed=false,committed=false;
+            try
+            {
+                CopyDirectory(original,staging);progress?.Report(30);
+                Action<string,string> merge=null;merge=(source,target)=>{Directory.CreateDirectory(target);foreach(string path in Directory.EnumerateFileSystemEntries(source)){if((File.GetAttributes(path)&FileAttributes.ReparsePoint)!=0)throw new IOException("Нельзя импортировать ссылку: "+path);string output=Path.Combine(target,Path.GetFileName(path));if(Directory.Exists(path))merge(path,output);else File.Copy(path,output,true);}};
+                foreach(var pair in new[]{new[]{request.CalculationDirectory,"bin"},new[]{request.DataDirectory,"data"}})if(!string.IsNullOrWhiteSpace(pair[0])&&!string.Equals(Path.GetFullPath(pair[0]).TrimEnd('\\'),Path.Combine(original,pair[1]).TrimEnd('\\'),StringComparison.OrdinalIgnoreCase))merge(pair[0],Path.Combine(staging,pair[1]));
+                string local=Path.Combine(staging,language);Directory.CreateDirectory(local);
+                if(!string.IsNullOrWhiteSpace(request.ParameterFile))File.Copy(request.ParameterFile,Path.Combine(local,"namepar1.txt"),true);
+                if(request.PictureBmp!=null)File.WriteAllBytes(Path.Combine(local,"PROJECT.BMP"),request.PictureBmp);
+                var jobs=IniFile.Load(Path.Combine(local,"jobs.ini"));jobs.Set("configs","key",request.Code.ToString(CultureInfo.InvariantCulture));jobs.Save(Path.Combine(local,"jobs.ini"));using(var input=File.OpenRead(Path.Combine(local,"jobs.ini")))using(var output=File.Create(Path.Combine(local,"jobs.ini.cod")))LegacyCodec.Encode(input,output);
+                catalog.Set("Engine","n"+slot,request.Name);catalog.Set("Engine","nn"+slot,request.Code.ToString());catalog.Set("Engine","ndescript"+slot,request.Description??"");catalog.Save(catalogTemp);progress?.Report(80);
+                Directory.Move(original,backup);moved=true;Directory.Move(staging,destination);installed=true;File.Replace(catalogTemp,catalogPath,catalogPath+".bak");committed=true;progress?.Report(100);
+            }
+            finally
+            {
+                if(!committed&&moved){if(installed)Directory.Move(destination,staging);Directory.Move(backup,original);}
+                if(File.Exists(catalogTemp))File.Delete(catalogTemp);
+                if(Directory.Exists(staging)&&Path.GetDirectoryName(Path.GetFullPath(staging))==root.TrimEnd(Path.DirectorySeparatorChar))Directory.Delete(staging,true);
+            }
+            using(var input=File.OpenRead(catalogPath))using(var output=File.Create(catalogPath+".cod"))LegacyCodec.Encode(input,output);
+        }
         private static void ValidateName(string name)
         {
             if (string.IsNullOrWhiteSpace(name) || name == "." || name == ".." || name.EndsWith(".") || name.EndsWith(" ") || name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 ||
@@ -119,4 +153,5 @@ namespace Mdiapp.Core
         }
     }
 }
+
 

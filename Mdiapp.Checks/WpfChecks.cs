@@ -380,6 +380,12 @@ namespace Mdiapp.Checks
                 Check(created&&File.Exists(Path.Combine(copied,"wpf-created","Ru","PROJECT.BMP")),"WPF Unit4 creates engine and converts PNG to BMP");
                 bool blankCreated=Mdiapp.Wpf.SettingsWindows.CreateEngine(dialogSettings,present:w=>Modal(w,()=>{Children(w).OfType<TextBox>().Single(t=>t.Name=="EngineField0").Text="no-picture";Children(w).OfType<TextBox>().Single(t=>t.Name=="EngineField1").Text="18";Children(w).OfType<TextBox>().Single(t=>t.Name=="EngineField2").Text="Моя настройка";Children(w).OfType<Button>().Single(b=>Equals(b.Content,"OK")).RaiseEvent(new RoutedEventArgs(Button.ClickEvent));}));
                 Check(blankCreated&&Directory.Exists(Path.Combine(copied,"no-picture","bin"))&&File.Exists(Path.Combine(copied,"no-picture","Ru","jobs.ini"))&&!File.Exists(Path.Combine(copied,"no-picture","Ru","PROJECT.BMP")),"WPF Unit4 creates project with empty image and import paths");
+                string editSource=Path.Combine(temp,"extra-input");Directory.CreateDirectory(editSource);File.WriteAllText(Path.Combine(editSource,"added.dat"),"new input");File.WriteAllText(Path.Combine(copied,"wpf-created","datar","keep.inm"),"keep project");
+                var editInfo=new Unit3Engine{Name="wpf-created",Code=19,Description="WPF test"};
+                bool edited=Mdiapp.Wpf.SettingsWindows.CreateEngine(dialogSettings,editing:editInfo,present:w=>Modal(w,()=>{Func<int,TextBox> field=n=>Children(w).OfType<TextBox>().Single(t=>t.Name=="EngineField"+n);Check(field(0).Text=="wpf-created"&&field(1).Text=="19"&&field(2).Text=="WPF test"&&Directory.Exists(field(3).Text)&&File.Exists(field(6).Text),"WPF edit engine prefills existing data");field(0).Text="renamed-engine";field(1).Text="17";field(2).Text="Updated engine";field(4).Text=editSource;Children(w).OfType<Button>().Single(b=>Equals(b.Content,"OK")).RaiseEvent(new RoutedEventArgs(Button.ClickEvent));}));
+                Check(edited&&File.ReadAllText(Path.Combine(copied,"renamed-engine","datar","keep.inm"))=="keep project"&&File.ReadAllText(Path.Combine(copied,"renamed-engine","data","added.dat"))=="new input"&&!Directory.Exists(Path.Combine(copied,"wpf-created")),"WPF edit renames engine imports data and preserves projects");
+                var editedCatalog=dialogSettings.GetEngines();Check(editedCatalog.Any(item=>item.Name=="renamed-engine"&&item.Code==17&&item.Description=="Updated engine")&&!editedCatalog.Any(item=>item.Name=="wpf-created")&&Directory.GetDirectories(copied,"wpf-created.backup-*").Length==1,"WPF edit updates catalog and keeps full backup");
+                bool editCancelled=Mdiapp.Wpf.SettingsWindows.CreateEngine(dialogSettings,editing:new Unit3Engine{Name="renamed-engine",Code=17,Description="Updated engine"},present:w=>Modal(w,()=>{Children(w).OfType<TextBox>().Single(t=>t.Name=="EngineField2").Text="Do not save";Children(w).OfType<Button>().Single(b=>Equals(b.Content,"Отмена")).RaiseEvent(new RoutedEventArgs(Button.ClickEvent));}));Check(!editCancelled&&dialogSettings.GetEngines().Single(item=>item.Name=="renamed-engine").Description=="Updated engine","WPF cancel engine edit leaves settings unchanged");
                 string oldRoot=Path.Combine(temp,"Legacy");Directory.CreateDirectory(Path.Combine(oldRoot,"old-source","datar"));File.Copy(picture,Path.Combine(oldRoot,"old-source","picture.png"));File.WriteAllText(Path.Combine(oldRoot,"old-source","datar","sample.inm"),"test");
                 var profile=new LegacyEngineProfile{Name="old-source"};profile.Values["Key"]="20";profile.Values["BmpFileName"]="picture.png";profile.Values["Parameter numbers"]="385 1";profile.Jobs[1]="calc.exe/1/0";
                 bool imported=Mdiapp.Wpf.SettingsWindows.CreateEngine(dialogSettings,profile,oldRoot,w=>Modal(w,()=>
@@ -405,6 +411,7 @@ namespace Mdiapp.Checks
         private static void Check(bool value,string name){if(!value)throw new Exception(name);Console.WriteLine("PASS "+name);}
     }
 }
+
 
 
 
